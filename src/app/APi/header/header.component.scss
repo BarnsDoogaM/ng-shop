@@ -1,0 +1,154 @@
+.header {
+    display: flex;
+    padding: 1rem 3rem;
+    box-shadow: var(--box-shadow);
+    font-size: var(--font-size);
+    background-color: rgb(248, 239, 239);
+    height: 10vh;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
+    @media screen and (min-width: 20em) {
+        height: 13vh;
+        padding: 1rem 0rem;
+    }
+
+    @media screen and (min-width: 75em) {
+        height: 10vh;
+    }
+
+    &__start {
+        margin-right: auto;
+        display: flex;
+        align-self: center;
+        background-color: rebeccapurple;
+        padding: 2.4rem 2rem;
+
+        @media screen and (min-width: 20em) {
+            padding: 1.5rem 2rem;
+            margin-left: -2rem;
+        }
+
+        @media screen and (min-width: 75em) {
+            padding: 2.4rem 2rem;
+            margin-left: 0rem;
+        }
+
+        & a {
+            text-decoration: none;
+            margin-left: 2rem;
+
+            @media screen and (min-width: 20em) {
+                margin-left: 2rem;
+            }
+
+            @media screen and (min-width: 75em) {
+                margin-left: 0rem;
+            }
+
+        }
+    }
+
+    &__end {
+        display: flex;
+        align-items: center;
+
+        @media screen and (min-width: 20em) {
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        @media screen and (min-width: 75em) {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: 0 3rem;
+        }
+
+
+        &>* {
+            text-decoration: none;
+            color: rebeccapurple;
+            font-size: 1.5rem;
+
+            @media screen and (min-width: 20em) {
+                font-size: 1.2rem;
+            }
+
+            @media screen and (min-width: 75em) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__link {
+        margin-left: 7rem;
+        @media screen and (min-width: 20em) {
+            margin-left: 7rem;
+        }
+
+        @media screen and (min-width: 75em) {
+            margin-left: 0rem;
+        }
+    }
+
+    &__end>&__input {
+        border: 1px solid rgb(240, 61, 61);
+
+        &:focus {
+            box-shadow: var(--box-shadow);
+        }
+    }
+
+    &__anchor {
+        color: var(--color-white);
+    }
+
+    &__input {
+        margin-right: 1rem;
+        outline: none;
+        padding: 1rem;
+
+        @media screen and (min-width: 20em) {
+            margin-right: 0rem;
+            order: 1;
+            outline: none;
+            padding: .5rem;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 75em) {
+            margin-right: 1rem;
+            outline: none;
+            padding: 1rem;
+            order: 0;
+        }
+
+        &::placeholder {
+
+            font-family: sans-serif;
+
+            @media screen and (min-width: 20em) {
+                font-size: 1rem;
+            }
+
+            @media screen and (min-width: 75em) {
+                // margin-right: 1rem;
+                // outline: none;
+                // padding: 1rem;
+            }
+
+
+
+        }
+    }
+
+    &__api {
+        margin-left: 1rem;
+
+    }
+
+}

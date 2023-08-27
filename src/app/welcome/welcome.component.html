@@ -1,0 +1,36 @@
+<section class="card">
+<div class="card__display-flex" *ngIf="products$ | async as products">
+   <a [routerLink]="['/APi', product.id]"  *ngFor="let product of products">
+    <div class="card__all">
+        <div class="card__head">
+            <img [src]="product.image" alt="">
+        </div>
+        <div class="card__body">
+            <h3>{{product.title}}</h3>
+            <h4>{{product.price}}</h4>
+            <p>{{product.rating}}</p>
+        </div>
+    </div>
+   </a>
+   
+   <!-- export interface Product {
+    id: number;
+    title: string;
+    price: number
+    description: string;
+    category: string;
+    image: string;
+    rating: Rating;
+  }
+  
+  export interface Rating {
+    rate: number
+    count: number
+  } -->
+   
+</div>
+<div *ngIf="errorMessage$ | async as errorMessage">
+    <p>{{errorMessage}}</p>
+   </div>
+
+</section>
