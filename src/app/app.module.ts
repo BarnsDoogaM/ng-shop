@@ -8,6 +8,7 @@ import { HeaderComponent } from './APi/header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FilterDirective } from './filter.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from './loader/loader.component';
 
 
 
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     WelcomeComponent,
     FilterDirective,
+    LoaderComponent,
   ],
 
   imports: [

@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {Injectable} from '@angular/core'
 import { Product } from './products';
-import { BehaviorSubject, Observable, Subject, catchError, filter, shareReplay, switchMap, tap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, catchError, delay, filter, shareReplay, switchMap, tap, throwError } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -17,8 +17,12 @@ export class productService{
   
 
     products$ = this.http.get<Product[]>(this.productsUrl).pipe(
+      
+        tap(() => this.isLoadingSubject.next(true)),
+        delay(3000),
         tap(data => console.log('products', JSON.stringify(data))),
         catchError(this.handleError),
+        tap(() => this.isLoadingSubject.next(false)),
         shareReplay(1)
     );
 

@@ -25,6 +25,8 @@ export class WelcomeComponent implements OnInit {
   )
 
   
+isLoading$ = this.productService.isLoadingAction$;
+
 
   ngOnInit(): void {
   }

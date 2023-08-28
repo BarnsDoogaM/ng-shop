@@ -14,6 +14,16 @@
         margin-top: 2rem;
     }
 
+    &__loading{
+        background-color: white;
+        width: 7%;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        z-index: 5000;
+        transform: translate(-50%, -50%);
+        opacity: .5;
+    }
     &__display-flex {
         display: flex;
         justify-content: center;
