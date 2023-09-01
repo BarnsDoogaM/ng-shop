@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EMPTY, Subject, catchError } from 'rxjs';
 import { productService } from 'src/app/welcome/products.service';
@@ -6,7 +6,8 @@ import { productService } from 'src/app/welcome/products.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailsComponent implements OnInit {
 
@@ -16,6 +17,7 @@ export class DetailsComponent implements OnInit {
 
   constructor(private productService: productService, private router: Router, private route: ActivatedRoute) { }
 
+  
   product$ = this.productService.product$.pipe(
     catchError(err => {
       this.erorrMessageSubject.next(err);

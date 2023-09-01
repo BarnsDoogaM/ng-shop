@@ -6,22 +6,29 @@ import { APiComponent } from './api.component';
 import { DetailsComponent } from './details/details.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     APiComponent,
     DetailsComponent,
     PaymentComponent,
-    CheckoutComponent
+    CheckoutComponent,
+  
+   
   ],
   imports: [
     CommonModule,
-    APiRoutingModule
+    APiRoutingModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    
   ],
   exports: [
     PaymentComponent,
-    CheckoutComponent
+    CheckoutComponent,
+   
   ]
 })
 export class APiModule { }

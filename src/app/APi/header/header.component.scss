@@ -5,7 +5,7 @@
     font-size: var(--font-size);
     background-color: rgb(248, 239, 239);
     height: 10vh;
-    backdrop-filter: blur(10px);
+    backdrop-filter: opacity(1000px);
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -21,6 +21,7 @@
     }
 
     &__start {
+        backdrop-filter: blur(1000px);
         margin-right: auto;
         display: flex;
         align-self: center;
@@ -96,7 +97,7 @@
     }
 
     &__end>&__input {
-        border: 1px solid rgb(240, 61, 61);
+        
 
         &:focus {
             box-shadow: var(--box-shadow);

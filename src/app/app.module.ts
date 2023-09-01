@@ -9,6 +9,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { FilterDirective } from './filter.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +26,9 @@ import { LoaderComponent } from './loader/loader.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    FormsModule
   ],
   
   providers: [],

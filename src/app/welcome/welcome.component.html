@@ -2,7 +2,23 @@
   <div class="card__loading" *ngIf="isLoading$ | async">
     <app-loader></app-loader>
   </div>
+
+  <div class="card__page">
+    <p>ou</p>
+    <div class="col-md-3">Page: {{currentPage$ | async }} of {{totalPages$ | async}}
+      <button class="btn btn-light" (click)="setPage(-1)" [disabled]="disablePrevious$ | async">Prev</button>
+      <button class="btn btn-light" (click)="setPage(1)" [disabled]="disableNext$ | async">Next</button>
+    </div>
+    <div class="col-md-3">Show Results:
+      <button class="btn btn-light" *ngFor="let pageSize of pageSize" (click)="setPageSize(pageSize)"
+        [ngClass]="{'active': pageSize === selectedButton}">
+        {{ pageSize }}
+      </button>
+    </div>
+    <span>Total Searches: {{totalFiltered$ | async}}</span>
+  </div>
   <div class="card__display-flex" *ngIf="products$ | async as products">
+
     <a [routerLink]="['/APi/products', product.id]" *ngFor="let product of products">
       <div class="card__all">
         <div class="card__head">
@@ -10,14 +26,20 @@
         </div>
         <div class="card__body">
           <h3>{{product.title}}</h3>
-          <h4>{{product.price}}</h4>
+          <h4>{{product.price | currency}}</h4>
           <p>{{product.rating}}</p>
         </div>
       </div>
     </a>
   </div>
-  <div *ngIf="errorMessage$ | async as errorMessage">
+  <div class="error" *ngIf="errorMessage$ | async as errorMessage">
     <p>{{errorMessage}}</p>
+  </div>
+
+  <div class="buy" [hidden]="hide">
+
+    <p>BUY NOW</p>
+    <button (click)="onHide()">x</button>
   </div>
 
 </section>

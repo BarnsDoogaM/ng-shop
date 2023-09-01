@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { productService } from 'src/app/welcome/products.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  
+
+  constructor(private productService: productService) { }
+
+  filter$ = this.productService.filterAction$;
 
   ngOnInit(): void {
   }
 
+  doFilter(filter: string){
+    this.productService.changeFilter(filter);
+  }
 }
