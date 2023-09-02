@@ -9,7 +9,7 @@ import { productService } from 'src/app/welcome/products.service';
 })
 export class HeaderComponent implements OnInit {
 
-  
+
 
   constructor(private productService: productService, private route: ActivatedRoute) { }
 
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     // this.filter$ = this.route.snapshot.queryParamMap.get('filterBy') || '';
   }
 
-  doFilter(filter: string){
+  doFilter(filter: string) {
     this.productService.changeFilter(filter);
   }
 }

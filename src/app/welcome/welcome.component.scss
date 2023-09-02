@@ -4,7 +4,7 @@
     font-size: var(--font-size);
     margin-top: 19rem;
     border: 1px solid white;
-   
+
 
     @media screen and (min-width: 20em) {
         padding: 0;
@@ -31,23 +31,24 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        position: relative;
+
     }
 
-    &__page{
+    &__page {
         margin: 4rem 8rem 0 8rem;
         color: white;
         display: flex;
         justify-content: space-between;
         margin-bottom: 2rem;
-       
 
-        & a{
+
+        & a {
             margin-right: auto;
         }
-       & span{
-       color: black;
-       }
+
+        & span {
+            color: black;
+        }
     }
 
     & a {
@@ -59,6 +60,7 @@
         box-shadow: 0rem .1rem 1rem rgba(0, 0, 0, 0.6);
         border-radius: 8px;
         color: black;
+        position: relative;
 
         &:hover {
             transform: translateY(-3px);
@@ -208,6 +210,8 @@
         position: absolute;
         width: 20%;
         color: rgb(231, 11, 11);
+        top: 7rem;
+        left: 5rem;
 
         & button {
             background-color: blue;

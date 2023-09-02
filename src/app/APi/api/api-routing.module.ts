@@ -4,6 +4,7 @@ import { APiComponent } from './api.component';
 import { DetailsComponent } from './details/details.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'products/:id', component: DetailsComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'payment', component: PaymentComponent},
+  {path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
