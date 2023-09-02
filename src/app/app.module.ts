@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     WelcomeComponent,
     FilterDirective,
     LoaderComponent,
+    ErrorComponent,
   ],
 
   imports: [

@@ -1,13 +1,26 @@
 .card {
     margin: 10rem 8rem 3rem 8rem;
 
+    @media screen and (min-width: 20em) {
+        display: block;
+        margin: 10rem 1rem 3rem 1rem;
+        
+    }
+    @media screen and (min-width: 75em) {
+        display: flex;
+        margin: 10rem 8rem 3rem 8rem;
+       
+    }
+
     &__all {
         display: flex;
         @media screen and (min-width: 20em) {
             display: block;
+            
         }
         @media screen and (min-width: 75em) {
             display: flex;
+           
         }
     }
     
@@ -70,9 +83,21 @@
 
     &__button {
         display: flex;
-        margin-top: 8rem;
+        // margin-top: 8rem;
         border: none;
         margin: 3rem;
+        
+
+        @media screen and (min-width: 20em) {
+            font-size: 1.5rem;
+            gap: 1rem;
+            margin: 1rem;
+        }
+        @media screen and (min-width: 75em) {
+            display: flex;
+            border: none;
+            margin: 3rem;
+        }
 
     }
 
@@ -83,6 +108,18 @@
         border: none;
         cursor: pointer;
         transition: all .2s;
+
+        @media screen and (min-width: 20em) {
+            padding: 1rem 1.5rem;
+        }
+        @media screen and (min-width: 75em) {
+            padding: 1.5rem 2rem;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all .2s;
+        }
     }
 
     &__btn--one {

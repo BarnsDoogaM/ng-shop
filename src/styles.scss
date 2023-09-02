@@ -22,5 +22,14 @@ html{
 
 body{
     color: var(--color-black);
-    // background-color: rgb(12, 12, 12);
 }
+
+.IsInvalid{
+    color: red;
+    // border: 3px solid red;
+}
+.invalid{
+    // color: red;
+    border: 3px solid red;
+}
+

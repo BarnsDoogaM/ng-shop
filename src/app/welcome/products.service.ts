@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable, Subject, catchError, combineLatest, delay,
 export class productService {
     private productsUrl = 'https://fakestoreapi.com/products';
 
-    pageSizes = [2, 3, 5];
+    pageSizes = [2, 5, 10, 20];
 
     constructor(private http: HttpClient) { }
 
@@ -26,7 +26,6 @@ export class productService {
 
 
     products$ = this.http.get<Product[]>(this.productsUrl).pipe(
-
         tap(() => this.isLoadingSubject.next(true)),
         delay(3000),
         tap(data => console.log('products', JSON.stringify(data))),
@@ -82,16 +81,7 @@ export class productService {
             )
         );
 
-    changePageSize(size: number): void {
-        this.pageSizeSubject.next(size);
-        // When the page size changes, reset the page number.
-        this.incrementPage(0);
-    }
-    // Increment/decrement the current page
-    // Pass 0 to re-initialize the page
-    incrementPage(amount: number): void {
-        this.pageNumberSubject.next(amount);
-    }
+    
 
     private productSelectedSubject = new BehaviorSubject<number>(0);
     productSelectedAction$ = this.productSelectedSubject.asObservable();
@@ -122,6 +112,16 @@ export class productService {
         this.incrementPage(0);
     }
 
+    changePageSize(size: number): void {
+        this.pageSizeSubject.next(size);
+        // When the page size changes, reset the page number.
+        this.incrementPage(0);
+    }
+    // Increment/decrement the current page
+    // Pass 0 to re-initialize the page
+    incrementPage(amount: number): void {
+        this.pageNumberSubject.next(amount);
+    }
 
     performFilter(products: Product[], filterBy: string): Product[] {
         filterBy = filterBy.toLocaleLowerCase();

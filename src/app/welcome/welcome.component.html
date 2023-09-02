@@ -3,43 +3,46 @@
     <app-loader></app-loader>
   </div>
 
-  <div class="card__page">
-    <p>ou</p>
-    <div class="col-md-3">Page: {{currentPage$ | async }} of {{totalPages$ | async}}
-      <button class="btn btn-light" (click)="setPage(-1)" [disabled]="disablePrevious$ | async">Prev</button>
-      <button class="btn btn-light" (click)="setPage(1)" [disabled]="disableNext$ | async">Next</button>
-    </div>
-    <div class="col-md-3">Show Results:
-      <button class="btn btn-light" *ngFor="let pageSize of pageSize" (click)="setPageSize(pageSize)"
-        [ngClass]="{'active': pageSize === selectedButton}">
-        {{ pageSize }}
-      </button>
-    </div>
-    <span>Total Searches: {{totalFiltered$ | async}}</span>
-  </div>
-  <div class="card__display-flex" *ngIf="products$ | async as products">
-
-    <a [routerLink]="['/APi/products', product.id]" *ngFor="let product of products">
-      <div class="card__all">
-        <div class="card__head">
-          <img [src]="product.image" alt="products">
-        </div>
-        <div class="card__body">
-          <h3>{{product.title}}</h3>
-          <h4>{{product.price | currency}}</h4>
-          <p>{{product.rating}}</p>
-        </div>
+  <div *ngIf="vm$ | async as vm">
+    <div class="card__page">
+      <p>ou</p>
+      <div class="col-md-3">Page: {{vm.currentPage }} of {{vm.totalPages}}
+        <button class="btn btn-light mx-2 f-2" (click)="setPage(-1)" [disabled]="disablePrevious$ | async">Prev</button>
+        <button class="btn btn-light" (click)="setPage(1)" [disabled]="disableNext$ | async">Next</button>
       </div>
-    </a>
-  </div>
-  <div class="error" *ngIf="errorMessage$ | async as errorMessage">
-    <p>{{errorMessage}}</p>
-  </div>
+      <div class="col-md-3">Show Results:
+        <button class="btn btn-primary mx-2 py-3 px-3" *ngFor="let pageSize of pageSize" (click)="setPageSize(pageSize)"
+          [ngClass]="{'active': pageSize === selectedButton}">
+          {{ pageSize }}
+        </button>
+      </div>
+      <span>Total Searches: {{vm.totalFiltered}}</span>
+    </div>
 
-  <div class="buy" [hidden]="hide">
+    <div class="card__display-flex">
 
-    <p>BUY NOW</p>
-    <button (click)="onHide()">x</button>
+      <a [routerLink]="['/APi/products', product.id]" *ngFor="let product of vm.products">
+        <div class="card__all">
+          <div class="card__head">
+            <img [src]="product.image" alt="products">
+          </div>
+          <div class="card__body">
+            <h3>{{product.title}}</h3>
+            <h4>{{product.price | currency}}</h4>
+            <p>{{product.category}}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="error" *ngIf="errorMessage$ | async as errorMessage">
+      <p>{{errorMessage}}</p>
+    </div>
+
+    <div class="buy" [hidden]="hide">
+
+      <p>BUY NOW</p>
+      <button (click)="onHide()">x</button>
+    </div>
+
   </div>
-
 </section>

@@ -1,19 +1,35 @@
-.checkout{
+.checkout {
     margin-top: 6.5rem;
     min-height: 90vh;
     border: 1px solid white;
 
+    @media screen and (min-width: 20em) {
+        margin-top: 4rem;
+    }
 
+    @media screen and (min-width: 75em) {
+        margin-top: 6.5rem;
+    }
 
-    &__border{
+    &__border {
+
         border: 1px solid white;
         margin: 8rem 2rem;
         padding-bottom: 2rem;
-       
-    }
-    
 
-    &__image{
+
+        @media screen and (min-width: 20em) {
+           margin: 4rem 1rem;
+        }
+
+        @media screen and (min-width: 75em) {
+            margin: 8rem 2rem;
+        }
+
+    }
+
+
+    &__image {
         max-width: 100%;
         padding: 1rem;
         background-color: rebeccapurple;
@@ -21,18 +37,37 @@
         margin: 3rem;
         display: flex;
 
-        & img{
-            width: 15%;
+        @media screen and (min-width: 20em) {
+           display: block;
+           width: 95%;
+           margin: 1rem;
+        }
+    
+        @media screen and (min-width: 75em) {
+           display: flex;
         }
 
-        & p{
+        & img {
+            width: 15%;
+
+            @media screen and (min-width: 20em) {
+              width: 50%;
+              margin-left: 2.2rem;
+             }
+     
+             @media screen and (min-width: 75em) {
+                width: 15%;
+             }
+        }
+
+        & p {
             margin-left: 2rem;
             color: white;
         }
     }
 
-    &__add{
-        & button{
+    &__add {
+        & button {
             font-size: 2rem;
             color: white;
             text-decoration: none;
@@ -43,11 +78,23 @@
             padding: 1rem;
             background-color: gray;
 
-            &:hover{
+            @media screen and (min-width: 20em) {
+                margin-left: 1rem;
+                padding: .5rem;
+                font-size: 1.5rem;
+             }
+     
+             @media screen and (min-width: 75em) {
+                margin-left: 4rem;
+                font-size: 2rem;
+                padding: 1rem;
+             }
+
+            &:hover {
                 background-color: rgb(196, 180, 180);
             }
 
-            &:active{
+            &:active {
                 background-color: rgb(196, 180, 180);
             }
         }

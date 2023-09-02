@@ -29,12 +29,12 @@
         padding: 2.4rem 2rem;
 
         @media screen and (min-width: 20em) {
-            padding: 1.5rem 2rem;
+            padding: .9rem 2rem;
             margin-left: -2rem;
         }
 
         @media screen and (min-width: 75em) {
-            padding: 2.4rem 2rem;
+            padding: 2.2rem 2rem;
             margin-left: 0rem;
         }
 
@@ -43,7 +43,7 @@
             margin-left: 2rem;
 
             @media screen and (min-width: 20em) {
-                margin-left: 2rem;
+                margin-left: 1rem;
             }
 
             @media screen and (min-width: 75em) {
@@ -87,6 +87,7 @@
 
     &__link {
         margin-left: 7rem;
+
         @media screen and (min-width: 20em) {
             margin-left: 7rem;
         }
@@ -97,7 +98,7 @@
     }
 
     &__end>&__input {
-        
+
 
         &:focus {
             box-shadow: var(--box-shadow);
@@ -129,11 +130,10 @@
         }
 
         &::placeholder {
-
             font-family: sans-serif;
 
             @media screen and (min-width: 20em) {
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
 
             @media screen and (min-width: 75em) {

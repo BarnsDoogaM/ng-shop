@@ -2,13 +2,27 @@
     &__section {
         width: 70%;
         margin: 15rem auto;
-        // border: 1px solid red;
         font-size: 1.6rem;
+
+        @media screen and (min-width: 20em) {
+            width: 90%;
+            margin: 10rem auto;
+        }
+
+        @media screen and (min-width: 75em) {
+            width: 70%;
+            margin: 15rem auto;
+            font-size: 1.6rem;
+        }
     }
 
     & form {
         background-color: rgb(176, 189, 176);
         border-radius: 10px;
+
+        @media screen and (min-width: 20em) {}
+
+        @media screen and (min-width: 75em) {}
 
         &>p {
             color: white;
@@ -19,6 +33,7 @@
             padding-top: 1rem;
         }
     }
+
     &__input {
         background-color: white;
         min-width: 100%;
@@ -31,23 +46,65 @@
 
         &--expirydate {
             width: 50%;
+
         }
     }
 
     &__expiry {
-
         display: flex;
 
 
     }
 
+
     &__container {
         padding: .5rem 2rem;
-        &--one {
-            width: 50%;
+
+        @media screen and (min-width: 20em) {
+            padding: .5rem .5rem;
+            width: 100%;
+
         }
+
+        @media screen and (min-width: 75em) {
+            padding: .5rem 2rem;
+        }
+
     }
 
+    &__container--different {
+
+        &--one {
+            width: 50%;
+
+            @media screen and (min-width: 20em) {
+                width: 45%;
+            }
+
+            @media screen and (min-width: 75em) {
+                width: 50%;
+            }
+        }
+
+        &--two {
+            width: 50%;
+
+            @media screen and (min-width: 20em) {
+                max-width: 45%;
+            }
+
+            // @media screen and (min-width: 75em) {
+            //     width: 50%;
+            // }
+
+
+        }
+
+    }
+
+    &__input--cvv {
+        width: 50%;
+    }
 
     & button {
         font-size: 2rem;
@@ -55,20 +112,35 @@
         text-decoration: none;
         text-transform: capitalize;
         margin-left: 3rem;
-        // border: 1px solid white;
         border-radius: 7px;
         padding: .5rem 4rem;
-        background-color: gray;
+        cursor: pointer;
+        // background-color: gray;
         margin-bottom: 1rem;
         margin-top: 1rem;
 
-        &:hover {
-            background-color: rgb(196, 180, 180);
+        // &:hover {
+        //     background-color: rgb(196, 180, 180);
+        // }
+
+        // &:active {
+        //     background-color: rgb(196, 180, 180);
+        // }
+
+        @media screen and (min-width: 20em) {
+            width: 95%;
+            margin: 1rem;
+            padding: .5rem 4rem;
         }
 
-        &:active {
-            background-color: rgb(196, 180, 180);
+        @media screen and (min-width: 75em) {
+            margin: 1rem 0 1rem 2rem;
+            padding: .5rem 0rem;
         }
+    }
+
+    .invalid{
+        border: 1px solid red;
     }
 
 }

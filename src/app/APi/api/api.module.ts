@@ -7,7 +7,7 @@ import { DetailsComponent } from './details/details.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,14 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     DetailsComponent,
     PaymentComponent,
     CheckoutComponent,
-  
-   
   ],
   imports: [
     CommonModule,
     APiRoutingModule,
     NgxPaginationModule,
     ReactiveFormsModule,
+    FormsModule,
     
   ],
   exports: [
