@@ -13,8 +13,8 @@
                 <h4>Category: {{product.category}}</h4>
 
                 <div class="card__button">
-                    <button class="card__btn card__btn--one">Add To Cart</button>
-                   <button class="card__btn card__btn--two" queryParamsHandling="preserve" (click)="onBack()">Back to products</button>
+                    <button class="card__btn card__btn--one" routerLink="/APi/payment">Add To Cart</button>
+                   <button class="card__btn card__btn--two" routerLink="/products/APi">Back to products</button>
                 </div>
             </div>
         </div>

@@ -10,23 +10,6 @@ import { Product } from 'src/app/welcome/products';
 export class PaymentComponent implements OnInit {
   postForm: FormGroup;
 
-  // product: Product;
-
-  // get isDirty(): boolean{
-  //   return JSON.stringify(this.originalProduct) !==JSON.stringify(this.currentProduct)
-  // }
-
-  // private: currentProduct: Product;
-  // private: originalProduct: Product;
-
-  // get product(): Product {
-  //   this.currentProduct;
-  // }
-
-  // set(value: Product) {
-  //   this.currentProduct = value;
-  //   this.originalProduct = { ...value }
-  // }
 
   constructor(private fb: FormBuilder) { }
 
